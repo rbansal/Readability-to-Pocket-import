@@ -18,4 +18,4 @@ import.py username password apikey jsonfile
 python import.py Username Password 12345api6789key012345 ~/Downloads/Readability.json
 ```
 #### Contributors:
-1) [rbansal](https://github.com/rbansal)
+1. [rbansal](https://github.com/rbansal)
