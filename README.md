@@ -13,6 +13,9 @@ Python script to import an exported JSON file from Readability into Pocket.
 ```
 import.py username password apikey jsonfile
 ```
-
+#### Example:
+```
+python import.py Username Password 12345api6789key012345 ~/Downloads/Readability.json
+```
 #### Contributors:
 1) [rbansal](https://github.com/rbansal)
