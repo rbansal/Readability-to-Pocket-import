@@ -24,8 +24,26 @@ url_dict = dict(zip(xrange(len(url_data)), url_data))
 
 dump = json.dumps(url_dict)
 
+url_read = []
+url_starred = []
+
+for y in data:
+	print('read:' + str(y['archive']))
+	if y['archive']:
+		url_read.append(dict(url=y['article__url']))
+	print('starred:' + str(y['favorite']))
+	if y['favorite']:
+		url_starred.append(dict(url=y['article__url'],tags='starred'))
+
+url_dict_read = dict(zip(xrange(len(url_read)), url_read))
+url_dict_starred = dict(zip(xrange(len(url_starred)), url_starred))
+
+dump_read = json.dumps(url_dict_read)
+dump_starred = json.dumps(url_dict_starred)
+print(dump_read)
+	
 url = 'https://readitlaterlist.com/v2/send'
-values = {'username' : username, 'password' : password, 'apikey' : apikey, 'new' : dump}
+values = {'username' : username, 'password' : password, 'apikey' : apikey, 'new' : dump, 'read' : dump_read, 'update_tags' : dump_starred}
 
 variables = urllib.urlencode(values)
 req = urllib2.Request(url, variables)
