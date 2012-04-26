@@ -11,11 +11,19 @@ Python script to import an exported JSON file from Readability into Pocket.
 3. Run the following code using your Pocket username and password:
  
 ```
-import.py username password apikey jsonfile
+importReadability.py username password apikey jsonfile
 ```
 #### Example:
 ```
-python import.py Username Password 12345api6789key012345 ~/Downloads/Readability.json
+python importReadability.py Username Password 12345api6789key012345 ~/Downloads/Readability.json
 ```
+
+#### Output:
+* 200 - Request was successful
+* 400 - Invalid request, please make sure you follow the documentation for proper syntax
+* 401 - Username and/or password is incorrect
+* 403 - Rate limit exceeded, please wait a little bit before resubmitting
+* 503 - Read It Later's sync server is down for scheduled maintenance.
+
 #### Contributors:
 1. [rbansal](https://github.com/rbansal)
